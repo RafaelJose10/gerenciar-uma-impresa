@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> criar impresa </title>
+    <style>
+        body {
+            color: rgb(0, 255, 0);
+            text-shadow: 1px 1px 1px rgb(87, 0, 0);
+            background-color: #111;
+        }
+        
+        button {
+            color: rgb(0, 255, 0);
+            background-color: rgb(67, 67, 67);
+        }
+        
+        input {
+            color: rgb(0, 255, 0);
+            background-color: rgb(67, 67, 67);
+        }
+        
+        input:hover {
+            background-color: rgb(0, 0, 0);
+        }
+        
+        button:hover {
+            background-color: rgb(0, 0, 0);
+        }
+        
+        input:focus {
+            font-size: 20px;
+            color: black;
+            background-color: white;
+            /* padding: 7px; */
+        }
+        
+        button.criar_impresa {
+            font-size: 30px;
+        }
+        
+        ;
+    </style>
+    <script>
+        function criar_impresa() {
+            var nome_da_impresa = window.document.querySelectorAll("input.nome_da_impresa")[0];
+            localStorage.setItem("nome da impresa", nome_da_impresa.value);
+            //==========================
+
+            var capital_inicial = window.document.querySelectorAll("input.capital_inicial")[0];
+            localStorage.setItem("capital inicial", capital_inicial.value);
+            //==========================
+
+            var nome_do_produto = window.document.querySelectorAll("input.nome_do_produto")[0];
+            localStorage.setItem("nome do produto", nome_do_produto.value);
+            var preço_do_produto = window.document.querySelector("input.preço_do_produto");
+            localStorage.setItem("preço do produto kg ou litro", preço_do_produto.value);
+            //==========================
+
+            var produto_ingredientes = window.document.querySelector("input.produto_ingredientes");
+            localStorage.setItem("preço do produto ou ingredientes kg ou litro", produto_ingredientes.value);
+            //==========================
+
+            var equipamentos_valor = window.document.querySelectorAll("input.equipamentos_valor")[0];
+            localStorage.setItem("valor dos equipamentos", equipamentos_valor.value);
+            var equipamentos_produz_por_dia = window.document.querySelector("input.equipamentos_produz_por_dia");
+            localStorage.setItem("equipamentos produz por dia kg ou litro", equipamentos_produz_por_dia.value);
+            var equipamentos_gasta_por_dia = window.document.querySelectorAll("input.equipamentos_gasta_por_dia")[0];
+            localStorage.setItem("equipamentos gasto por dia", equipamentos_gasta_por_dia.value);
+            var equipamentos_funcionarios_necessario = window.document.querySelectorAll("input.equipamentos_funcionarios_necessario")[0];
+            localStorage.setItem("equipamentos funcionarios necessario", equipamentos_funcionarios_necessario.value);
+            //==========================
+            var funcionarios_função = window.document.querySelectorAll("input.funcionarios_função")[0];
+            localStorage.setItem("funcionarios função", funcionarios_função.value);
+            var funcionarios_diaria = window.document.querySelector("input.funcionarios_diaria");
+            localStorage.setItem("funcionarios diaria", funcionarios_diaria.value);
+            var funcionarios_quantidade = window.document.querySelectorAll("input.funcionarios_quantidade")[0];
+            localStorage.setItem("funcionarios quantidade", funcionarios_quantidade.value);
+            var funcionarios_produz_por_dia = window.document.querySelector("input.funcionarios_produz_por_dia");
+            localStorage.setItem("funcionarios produz por dia kg ou litro", funcionarios_produz_por_dia.value);
+            //==========================
+
+
+            window.open("./administrar impresa.html");
+
+        };
+    </script>
+</head>
+
+<body>
+    <h1> criar impresa </h1>
+
+    <h2> complete todas as informações </h2>
+
+    <h3> nome da impresa </h3>
+    <input type="text" class="nome_da_impresa">
+    <hr>
+
+    <h3> capital inicial </h3>
+    <input type="number" class="capital_inicial">
+    <hr>
+
+    <h3> nome e preço do produto </h3>
+    <p>nome</p> <input type="text" class="nome_do_produto">
+    <p> preço por kg ou litro </p><input type="number" class="preço_do_produto">
+    <hr>
+
+    <h3> preço do produto ou total de todos os ingredientes </h3>
+    <p> preço por kg ou litro do produto ou dos ingredientes </p> <input type="number" class="produto_ingredientes" min="0">
+    <hr>
+
+    <h3> equipamentos necessario para produzir seu produto</h3>
+    <p> valor para compra do(s) equipamentos </p> <input type="number" class="equipamentos_valor" name="" id="">
+    <p> produz quantos kg ou litro por dia</p> <input type="number" class="equipamentos_produz_por_dia" name="" id="">
+    <p> gasta quanto por dia </p> <input type="number" class="equipamentos_gasta_por_dia" name="" id="">
+    <p> necessita de quantos funcionarios</p> <input type="number" class="equipamentos_funcionarios_necessario" name="" id="">
+    <hr>
+
+    <h3> funcionarios necessarios para produzir seu produto </h3>
+    <p> função </p> <input type="text" class="funcionarios_função" name="" id="">
+    <p> diaria </p> <input type="number" class="funcionarios_diaria" name="" id="" min="30">
+    <p> quantidade de funcionarios</p> <input type="number" class="funcionarios_quantidade" name="" id="">
+    <p> produz quantos kg ou litro por dia</p> <input type="number" class="funcionarios_produz_por_dia" name="" id="">
+    <hr>
+
+
+    <!-- <h3> mil produtos por dia, quantos funcionarios e necessarios</h3>
+    <p></p> -->
+
+    <br>
+    <button class="criar_impresa" onclick="criar_impresa()"> criar impresa </button>
+    <br><br><br><br><br><br><br>
+
+</body>
+
+</html>

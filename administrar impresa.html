@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> administrar impresa </title>
+    <style>
+        body {
+            color: white;
+            background-color: rgb(21, 21, 21);
+        }
+        
+        menu.menu_1 {
+            border: solid 2px white;
+        }
+        
+        section.section_1 {
+            border: solid 2px white;
+        }
+        
+        section.section_1>p {
+            font-size: 25px;
+            display: inline-block;
+            margin-left: 20px;
+        }
+        
+        section.section_1>p:hover {
+            color: rgb(0, 255, 0);
+        }
+    </style>
+    <script>
+        const dim_dim = (moeda) => {
+            return parseInt(moeda).toLocaleString("pt-br", {
+                style: "currency",
+                currency: "BRL"
+            });
+        };
+
+        function inicia() {
+            var titulo_1 = window.document.getElementsByClassName("titulo_1")[0];
+            titulo_1.textContent = "impresa " + localStorage.getItem("nome da impresa");
+
+            var p_2 = window.document.getElementsByClassName("nome_produto")[0];
+            p_2.textContent = "vendedor de " + localStorage.getItem("nome do produto");
+
+            var p_1 = window.document.getElementsByClassName("p_1")[0];
+            p_1.textContent = "dinheiro total " + dim_dim(localStorage.getItem("capital inicial"));
+
+
+        };
+    </script>
+</head>
+
+<body onload="inicia()">
+
+    <!-- <menu class="menu"> -->
+
+    <menu class="menu_1">
+        <section class="section_1">
+            <p> inicio </p>
+            <p> comprar </p>
+            <p> anunciar </p>
+            <p> estastisticas </p>
+        </section>
+
+        <h1 class="titulo_1"> impresa </h1>
+        <p class="nome_produto"> nome do produto </p>
+        <p class="p_1"> capital inicial </p>
+    </menu>
+
+    <!-- </menu> -->
+</body>
+
+</html>
